@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Array</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <label for="inputArray">Enter an array of integers (separated by spaces):</label>
+    <input type="text" id="inputArray">
+    <button onclick="sortArray()">Sort and Print</button>
+    <p id="sortedArray"></p>
+
+    <script>
+        function sortArray() {
+            const inputElement = document.getElementById("inputArray");
+            const userInput = inputElement.value;
+
+            // Split the input string into an array of strings
+            const inputArray = userInput.split(" ");
+
+            // Convert the array of strings to an array of integers
+            const integerArray = inputArray.map(Number);
+
+            // Sort the array in ascending order
+            integerArray.sort((a, b) => a - b);
+
+            // Display the sorted array
+            const sortedArrayElement = document.getElementById("sortedArray");
+            sortedArrayElement.textContent = "Sorted array: " + integerArray.join(", ");
+        }
+    </script>
+</body>
+</html>
